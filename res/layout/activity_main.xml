@@ -1,0 +1,128 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context="com.snapsofts.anh.MainActivity" >
+
+    <RelativeLayout
+        android:id="@+id/rl_bar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#2b2b2b" >
+
+        <ImageView
+            android:id="@+id/iv_menu"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="15dp"
+            android:src="@drawable/ic_menu"/>
+
+        <RadioGroup
+            android:id="@+id/Rg_btn_newest"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_rg"
+            android:orientation="horizontal"
+            android:weightSum="100" >
+
+            <RadioButton
+                android:id="@+id/btn_newest"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:background="@drawable/bg_btn_newest"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="newest"
+                android:textColor="@android:color/white" />
+
+            <RadioButton
+                android:id="@+id/btn_hotest"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:background="@drawable/bg_btn_hotest"
+                android:button="@null"
+                android:gravity="center"
+                android:text="hotest"
+                android:textColor="@android:color/white" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/Rg_btn_list"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bg_rg"
+            android:orientation="horizontal"
+            android:weightSum="100" >
+
+            <RadioButton
+                android:id="@+id/btn_list"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:background="@drawable/bg_list"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center" />
+
+            <RadioButton
+                android:id="@+id/btn_grid"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:background="@drawable/bg_grid"
+                android:button="@null"
+                android:gravity="center" />
+        </RadioGroup>
+    </RelativeLayout>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/DrawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_bar" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <com.astuetz.PagerSlidingTabStrip
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/background_tabs"
+                android:textColor="#5b5b5b"
+                android:textSize="14sp"
+                app:pstsDividerColor="#000000"
+                app:pstsIndicatorColor="#5b5b5b"
+                app:pstsShouldExpand="true" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tabs"
+                tools:context=".MainActivity" />
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/list_menu"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="#5b5b5b" >
+        </ListView>
+    </android.support.v4.widget.DrawerLayout>
+
+</RelativeLayout>
